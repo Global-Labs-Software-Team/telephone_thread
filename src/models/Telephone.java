@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Telephone extends Thread {
     String phoneNumber;
     ArrayList<Integer> bitsReceived;
-    // Producer producer;
+    Producer producer;
     Consumer consumer;
 
     public Telephone(String phoneNumber) {
@@ -16,7 +16,7 @@ public class Telephone extends Thread {
 
     public void run() {
         System.out.println("Starting running Telephone " + phoneNumber);
-        // new Producer(phoneNumber + "_producer").start();
+        new Producer(phoneNumber + "_producer").start();
         new Consumer(phoneNumber + "_consumer", bitsReceived).start();
 
         for (int i = 0; i < 5; i++) {
