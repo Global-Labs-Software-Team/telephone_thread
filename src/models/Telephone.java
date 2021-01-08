@@ -16,9 +16,8 @@ public class Telephone extends Thread {
 
     public void run() {
         System.out.println("Starting running Telephone " + phoneNumber);
-        new Producer(phoneNumber + "_producer").start();
+        new Producer(phoneNumber + "_producer", bitsReceived, 10).start();
         new Consumer(phoneNumber + "_consumer", bitsReceived).start();
-
         for (int i = 0; i < 5; i++) {
             try {
                 sleep((int)(Math.random() * 3000));
