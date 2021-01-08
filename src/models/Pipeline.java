@@ -1,20 +1,29 @@
 package models;
 
-import java.util.Queue;
 import java.util.LinkedList;
 
 public class Pipeline {
-    Queue<Integer> pipe;
+    LinkedList<Integer> pipe;
 
     public Pipeline() {
         pipe = new LinkedList<Integer>();
+    }
+
+    public Pipeline(LinkedList<Integer> data) {
+        pipe = data;
     }
 
     public void publish(int bit) {
 
     }
 
+    /**
+     * It will read the first element of the pipeline (HEAD)
+     * and return it.
+     * @return the bit at the head of the list
+     */
     public int consume() {
-        return 0;
+        int bitRead = pipe.remove();
+        return bitRead;
     }
 }
