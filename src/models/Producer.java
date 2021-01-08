@@ -16,15 +16,15 @@ public class Producer extends Thread {
     }
     
     public void run() {
-    	int current_message; 
+        int current_message;
         for (int i = 0; i < max_messages; i++) { 
         	current_message = rand.nextInt(1000);
-            synchronized (this) { 
-           
-                System.out.println("Producer " + getName() + "produced" + Integer.toString(current_message)); 
-                queue.add(current_message); 
-
-            } 
+            publishMessage(current_message);
         } 
+    }
+
+    synchronized void publishMessage(int current_message) {
+        System.out.println("Producer " + getName() + " produced " + Integer.toString(current_message)); 
+        queue.add(current_message);
     }
 }
