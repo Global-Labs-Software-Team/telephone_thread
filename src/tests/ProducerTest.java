@@ -1,11 +1,11 @@
 package tests;
 
-import java.util.ArrayList;
-
 import models.Producer;
+import models.Pipeline;
+
 public class ProducerTest {
     public static void main(String[] args) {
-        ArrayList<Integer> queue = new ArrayList<Integer>();
+        Pipeline queue = new Pipeline();
         new Producer("producer_one", queue, 10).start();
     }
 }

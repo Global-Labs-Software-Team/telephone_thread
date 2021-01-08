@@ -3,9 +3,11 @@ package tests;
 import java.util.ArrayList;
 
 import models.Consumer;
+import models.Pipeline;
 
 public class ConsumerTest {
     public static void main(String[] args) {
-        new Consumer("consumer_one", new ArrayList<Integer>()).start();
+        Pipeline dummyPipeline = new Pipeline();
+        new Consumer("consumer_one", dummyPipeline, new ArrayList<Integer>(), 20).start();
     }
 }
