@@ -1,20 +1,20 @@
 package models;
 
-import java.util.Queue;
 import java.util.LinkedList;
 
 public class Pipeline {
-    Queue<Integer> pipe;
+    LinkedList<Integer> pipe;
 
     public Pipeline() {
         pipe = new LinkedList<Integer>();
     }
 
     public void publish(int bit) {
-
+        pipe.addLast(bit);
     }
 
     public int consume() {
-        return 0;
+        int bitRead = pipe.remove();
+        return bitRead;
     }
 }
