@@ -3,6 +3,11 @@ package tests;
 import models.Telephone;
 import models.Pipeline;
 
+ /**
+   * Tests whether the threads for two different phones are started
+   * {@link models.Telephone#Telephone(phoneNumber, PublishMessages, consumeMessages, seconds)
+   */
+
 public class TelephoneTest {
     public static void main(String[] args) {
         Pipeline phone1_to_phone2 = new Pipeline();

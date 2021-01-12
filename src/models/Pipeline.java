@@ -2,6 +2,21 @@ package models;
 
 import java.util.LinkedList;
 
+/**
+ * Pipeline offers an implementation of a pipe as a linkedlist object. The pipe has some modification functions.
+ *  
+ * <p> The functions that can be performed on the pipe linkedlist includes:
+ * <ul>
+ * <li> Instantiate the pipe object
+ * <li> Set the pipeline equal to some data
+ * <li> Publish a message bit to the end of the pipe
+ * <li> Consume a message bit from the start of the pipe
+ * </ul>
+ * 
+ * @since 1.0
+ * @author Byron Barkhuizen
+ */
+
 public class Pipeline {
     LinkedList<Integer> pipe;
 
